@@ -1,66 +1,140 @@
 <!DOCTYPE html>
+<html lang="en">
 
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <title>Login / Sign Up Form</title>
-    <link rel="shortcut icon" href="/assets/favicon.ico">
-    <link rel="stylesheet" href="./src/main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="login-container">
-    <!--Log in Starts-->
-        <form action="" class="form" id="login">
-            <h1 class="form__title">Login</h1>
-            <div class="form__message form__message--error"></div>
-            <div class="form__input-group">
-                <input type="text" class="form__input" autofocus placeholder="Username or email">
-                <div class="form__input-error-message"></div>
-            </div>
-            <div class="form__input-group">
-                <input type="password" class="form__input" autofocus placeholder="Password">
-                <div class="form__input-error-message"></div>
-            </div>
-            <button class="form__button" type="submit">Continue</button>
-            <p class="form__text">
-                <a href="#" class="form__link">Forgot your password?</a>    <!--Remember to add a new page to the "#" when people need to update thier password-->
-            </p>
-            <p class="form__text">
-                <a id="linkCreateAccount" href="login.html" class="form__link">Don't have an account? Create an account</a>
-            </p>
-        </form> 
-    <!--Log in Ends-->
+    <head> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Furrever Home</title>
+        <link rel="stylesheet" href="./src/main.css">
+        <link rel="shortcut icon" href="/assets/favicon.ico">
+    </head>
+    <body>  
+        <!-- Header Start -->
+        <header>
+            <nav class="navbar container flex">
+                <h2 class="logo"><a href="#">Furrever Home  </a></h2>
 
-    <!--Sign up Starts-->
-        <form action="" class="form form--hidden" id="createAccount">
-            <h1 class="form__title">Create Account</h1>
-            <div class="form__message form__message--error"></div>
-            <div class="form__input-group">
-                <input type="text" id="signupUsername" class="form__input" autofocus placeholder="Username">
-                <div class="form__input-error-message"></div>
-            </div>
-            <div class="form__input-group">
-                <input type="text" id="emailAddress" class="form__input" autofocus placeholder="Email address">
-                <div class="form__input-error-message"></div>
-            </div>
-            <div class="form__input-group">
-                <input type="password" id="enterPassword" class="form__input" autofocus placeholder="Password">
-                <div class="form__input-error-message"></div>
-            </div>
-            <div class="form__input-group">
-                <input type="password" id="confirmPassword" class="form__input" autofocus placeholder="Confirm Password">
-                <div class="form__input-error-message"></div>
-            </div>
-            <button class="form__button" type="submit">Continue</button>
-            <p class="form__text">
-                <a id="linkLogin" href="login.html" class="form__link">Already have an account? Sign in</a>
-            </p>
-        </form> 
-    <!--Sign up Ends-->
+                    <ul class="nav-links flex">
+                    <li><a href="index.html#about">Adopt</a></li>
+                    <li><a href="#Browse">Browse</a></li>
+                    <li><a href="#About Us">About Us</a></li>
+                    <li><a href="#Contact Us">Contact Us</a></li>
+                    <li><a href="#Shelters">Shelters</a></li>
+                </ul>
+                <a href="./login.html" class="login-btn flex">Login/Signup</a>
+            </nav>
+        </header>
+        <!-- Header End -->
+        <main>
+        <!-- Homepage Start -->
+            <section class="homepage" id="home">
+                <div class="content flex">
+                    <a href="#services">Adopt Now</a>
+                </div>
+            </section>
+        <!-- Homepage End -->
 
-    </div>
-    <script src="./src/main.js"></script>
-</body>
+        <!-- Cell Box Start -->
+            <section class="cell-box">
+                <div class="cell-container">
+                    <h1 class="cell">Find your Furrever Companion</h1>
+                </div>
+            </section>
+        <!-- Cell Box End -->
+
+        <!-- Gallery Start -->
+            <section class="gallery">
+                <div class="gallery-container">
+                    <div class="gallery-item">
+                        <img src="./src/dog1.jpeg" alt="Dog Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./src/cat1.jpeg" alt="Cat Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./src/dog2.jpeg" alt="Another Cat Image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./src/cat2.jpg" alt="Dog in Raincoat Image">
+                    </div>
+                </div>
+            </section>
+        <!-- Gallery End -->
+
+        <!-- About Us Start-->
+        <section class="about" id="about">
+            <div class="about-container">
+                <h2>About Us</h2>
+                <div class="team">
+                    <div class="team-row top-row">
+                        <div class="team-member">
+                            <img src="src/Jorge.jpg" alt="Jorge Lameiras">
+                            <p>Jorge Lameiras</p>
+                            <span>Founder</span>
+                        </div>
+                        <div class="team-member">
+                            <img src="path/to/rian-image.jpg" alt="Rian O'Shields">
+                            <p>Rian O'Shields</p>
+                            <span>Founder</span>
+                        </div>
+                    </div>
+                    <div class="team-row bottom-row">
+                        <div class="team-member">
+                            <img src="src/Sarah.jpeg" alt="Sara Young">
+                            <p>Sara Young</p>
+                            <span>Founder</span>
+                        </div>
+                        <div class="team-member">
+                            <img src="src/Angie.jpeg" alt="Angie Lam">
+                            <p>Angie Lam</p>
+                            <span>Founder</span>
+                        </div>
+                        <div class="team-member">
+                            <img src="src/Kierson.jpeg" alt="Kierson">
+                            <p>Kierson</p>
+                            <span>Founder</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About Us End-->
+
+        <!-- Contact Us Start -->
+         <section class="contact" id="contact">
+            <div class="contact-container">
+                <div class="section-title">
+                    <h2>Contact Us</h2>
+                    <p>Loremememem, jojeidjie. jOornbeuindiaxniewncedoeic</p>
+                </div>
+            </div>
+
+            <div class="row flex">
+                <div class="col information">
+                    <div class="contact-details">
+                        <p>Contact us at: &#128222; +1 (321) 310-3211</p>
+                        <p>Email us: &#9993; contact@yourcompany.com</p>
+                    </div>
+                </div>
+            </div>
+
+
+         </section>
+        <!-- Contact Us End -->
+       
+        <!-- Footer Start -->
+            <footer>
+                <div class="footer-container">
+                    <ul class="footer-nav">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">INQUIRE</a></li>
+                        <li><a href="#">LOCATION</a></li>
+                        <li><a href="#">SOCIALS</a></li>
+                    </ul>
+                </div>
+            </footer>
+        <!-- Footer End -->
+        </main>
+
+    </body>
+</html> 
