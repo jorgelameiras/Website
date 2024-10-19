@@ -1,6 +1,4 @@
 # Furrever
 
 
-Our system will assist computer science students with 4-year academic planning, and recommend courses based on prerequisites, degree requirements, and course availability. It will also, calculate the probability of course enrollment based on historical data, class year, and demand trends.
-
-This is a change.
+Furrever Homes is a website that aims to centralize animal shelters in Orange County and streamline the adoption process for both shelters and potential adopters. Our goal is to make it easier for people to find and adopt cats and dogs, reducing the workload on shelters while providing up-to-date information about each animal.
