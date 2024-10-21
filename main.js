@@ -90,4 +90,80 @@ document.addEventListener("DOMContentLoaded", () =>{
             clearInputError(inputElement);
         })
     });
+
+// Send the contact us form to our email
+    document.addEventListener("DOMContentLoaded", function() {
+        const contactForm = document.querySelector("#contact-form");
+        if (contactForm){
+            contactForm.addEventListener("submit", handleSubmit);
+        }
+    });
+
+    function validateForm() {
+        const name = document.querySelector("#contact-form input[name='name']").value.trim();
+        const email = document.querySelector("#contact-form input[name='email']").value.trim();
+        const message = document.querySelector("#contact-form textarea[name='message']").value.trim();
+    
+        if (!name || !email || !message) {
+            return false;
+        }
+        return true;
+    }
+
+    function handleSubmit (event) {
+        event.preventDefault();
+
+        if (!validateForm()) {
+            displayErrorMessage("Please fill in all fields.");
+            return;
+        }
+
+        const name = document.querySelector("#contact-form input[name='name']").value;
+        const email = document.querySelector("#contact-form input[name='email']").value;
+        const message = document.querySelector("#contact-form textarea[name='message']").value;
+
+        sendEmail(name, email, message);
+    }
+
+    function displayErrorMessage(message) {
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'error-message';
+        errorDiv.textContent = message;
+        errorDiv.style.color = 'red';
+        errorDiv.style.marginBottom = '10px';
+    
+        const form = document.querySelector("#contact-form");
+        form.insertBefore(errorDiv, form.firstChild);
+    
+        // Remove the error message after 3 seconds
+        setTimeout(() => {
+            errorDiv.remove();
+        }, 3000);
+    }
+
+    function sendEmail(name, email, message) {
+    // ISend this data to a server
+    // For demonstration, I am a mock API call
+        fetch('/api/send-email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name: name,
+                email: email,
+                message: message,
+                to: "furreverhome@gmail.com"
+            }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert('Message sent successfully!');
+            document.querySelector("#contact-form").reset();
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again later.');
+        });
+    }
 });
