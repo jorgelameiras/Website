@@ -1,4 +1,41 @@
+import mysql from 'mysql2'
+import dotenv from 'dotenv'
+
+dotenv.config()
+
 const password = document.getElementById("enterPassword");
+
+const pool = mysql.createPool({
+    host: process.env.MYSQL_HOST,
+    user: process.env.MYSQL_USER,
+    password: process.env.MYSQL_PASSWORD,
+    database: process.env.MYSQL_DATABASE
+  }).promise()
+
+  function isValidPhoneNumber(phoneNumber) {
+    const phoneRegex = /^[0-9]{10}$/; // Example: Validating US phone numbers
+    return phoneRegex.test(phoneNumber);
+}
+
+export async function createAccount(name, email, password, phoneNumber) {
+    if (!isValidPhoneNumber(phoneNumber)) {
+        throw new Error("Invalid phone number format");
+    }
+
+    try {
+        const hashedPassword = await bcrypt.hash(password, 10);
+        
+        await pool.query(`
+            INSERT INTO userAccount (Name, Password, Email, PhoneNumber)
+            VALUES (?, ?, ?, ?)
+        `, [name, hashedPassword, email, phoneNumber]);
+        
+        console.log("Account created for:", name);
+    } catch (error) {
+        console.error("Error creating account:", error);
+        throw error;
+    }
+}
 
 function setFormMessage(formElement, type, message) {
     const messageElement = formElement.querySelector(".form__message");
